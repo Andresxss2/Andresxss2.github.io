@@ -53,6 +53,11 @@ main{
             color: #060A24;
             letter-spacing: 0;
             line-height: 22px;
+            &:hover{
+                transition-duration:1s;
+                background-image: linear-gradient(225deg, #0000FE 0, #00F0B8 100%);
+                color: #FFFFFF;
+            }
             
         }
     }
@@ -112,11 +117,6 @@ main{
             margin: 0 0 11px 11px;
             transform: none;
             transform-origin: none;
-            img{
-                width:100%;
-            }
-           
-
         }
         .embed-container {
             position: relative;

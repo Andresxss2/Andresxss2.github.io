@@ -54,8 +54,8 @@ header img {
 
 header .menu_movil {
   width: 18px;
-  height: 10px;
-  margin: 16px 5.9% 0 0;
+  height: 12px;
+  margin: 16px 19px 0 0;
 }
 
 header .menu {
@@ -133,6 +133,13 @@ main .title div {
   color: #060A24;
   letter-spacing: 0;
   line-height: 22px;
+}
+
+main .title div:hover {
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  background-image: linear-gradient(225deg, #0000FE 0, #00F0B8 100%);
+  color: #FFFFFF;
 }
 
 main .oblicuo {
@@ -213,10 +220,6 @@ main .episodios .movile {
           transform: none;
   -webkit-transform-origin: none;
           transform-origin: none;
-}
-
-main .episodios .movile img {
-  width: 100%;
 }
 
 main .episodios .embed-container {
