@@ -1,26 +1,16 @@
 header{
     grid-area: _header;
-    
     width: 100%;
     height: 44px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    @media screen and (min-width:600px) {
-            width: 100%;
-            height: 80px;
-        }
+   
 
     img{
         width: 24px;
         height: 24px;
         margin: 10px 0 0 5%;
-
-        @media screen and (min-width:600px) {
-            width: 36px;
-            height: 36px;
-            margin: 22px 0 0 100px;
-        }
     }
     
     .menu_movil{
@@ -33,25 +23,5 @@ header{
     .menu{
         display: none;
     }
-
-    @media screen and (min-width:600px) {
-        flex-flow: row wrap;
-        width: 100%;
-        height: 80px;
-        .menu_movil{
-            display: none;
-        }
-        .menu{
-            
-            display: flex;
-            justify-content:flex-end;
-            width: 68px;
-            height: 26px;
-            list-style: none;
-            text-transform: capitalize;
-
-        }
-    }
-
 
 }

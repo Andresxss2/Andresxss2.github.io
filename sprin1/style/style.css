@@ -7,16 +7,12 @@
           box-sizing: border-box;
 }
 
-.contenido {
-  width: 100%;
-}
-
 .grid_body {
   display: -ms-grid;
   display: grid;
       grid-template-areas: "_header" "_main" "_footer";
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
   grid-auto-rows: auto;
   background-color: #FFFFFF;
 }
@@ -50,25 +46,10 @@ header {
           justify-content: space-between;
 }
 
-@media screen and (min-width: 600px) {
-  header {
-    width: 100%;
-    height: 80px;
-  }
-}
-
 header img {
   width: 24px;
   height: 24px;
   margin: 10px 0 0 5%;
-}
-
-@media screen and (min-width: 600px) {
-  header img {
-    width: 36px;
-    height: 36px;
-    margin: 22px 0 0 100px;
-  }
 }
 
 header .menu_movil {
@@ -79,32 +60,6 @@ header .menu_movil {
 
 header .menu {
   display: none;
-}
-
-@media screen and (min-width: 600px) {
-  header {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    width: 100%;
-    height: 80px;
-  }
-  header .menu_movil {
-    display: none;
-  }
-  header .menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    width: 68px;
-    height: 26px;
-    list-style: none;
-    text-transform: capitalize;
-  }
 }
 
 main {
@@ -208,6 +163,10 @@ main .episodios {
           flex-flow: row wrap;
 }
 
+main .episodios div {
+  width: 100%;
+}
+
 main .episodios article {
   width: 100%;
   -webkit-transform: skewY(6deg);
@@ -256,6 +215,26 @@ main .episodios .movile {
           transform-origin: none;
 }
 
+main .episodios .movile img {
+  width: 100%;
+}
+
+main .episodios .embed-container {
+  position: relative;
+  padding-bottom: 73%;
+  height: 0;
+}
+
+main .episodios .embed-container iframe {
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 101%;
+  height: 100%;
+}
+
 main .nosotros {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
@@ -277,7 +256,7 @@ main .nosotros .phone_over {
 }
 
 main .nosotros .phone_over img {
-  width: 360px;
+  width: 99%;
   height: 519px;
 }
 
@@ -312,5 +291,39 @@ footer {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: _footer;
+}
+
+@media screen and (min-width: 600px) {
+  header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    width: 100%;
+    height: 80px;
+  }
+  header .menu_movil {
+    display: none;
+  }
+  header .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    width: 68px;
+    height: 26px;
+    list-style: none;
+    text-transform: capitalize;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  header img {
+    width: 36px;
+    height: 36px;
+    margin: 22px 0 0 100px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

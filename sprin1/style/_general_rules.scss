@@ -1,21 +1,17 @@
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.contenido{
-    width: 100%;
-    
-}
+
 
 .grid_body{
     display: grid;
     grid-template-areas:"_header"
                         "_main"
                         "_footer";
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     grid-auto-rows: auto;
     background-color: $back_ground_color;
 }
