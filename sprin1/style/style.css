@@ -178,6 +178,52 @@ main {
   font-family: IBMPlexSans,sans-serif;
 }
 
+main .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-transform: uppercase;
+  width: 90%;
+  height: 48px;
+  margin: 36px 5% 24px 5%;
+  font-family: 'IBM Plex Mono', monospace,sans-serif;
+  font-weight: 500;
+  background-color: #00F3BB;
+  font-size: 16px;
+  color: #060A24;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+main .btn:hover {
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  background-image: linear-gradient(225deg, #0000FE 0, #00F0B8 100%);
+  color: #FFFFFF;
+}
+
+main h2 {
+  width: 90%;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+}
+
+main p {
+  width: 90%;
+  font-family: 'IBM Plex Mono', monospace,sans-serif;
+  font-weight: 400;
+}
+
 main .title {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -211,46 +257,12 @@ main .title p {
   line-height: 22px;
 }
 
-main .title div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-transform: uppercase;
-  width: 90%;
-  height: 48px;
-  margin: 36px 5% 24px 5%;
-  font-weight: 500;
-  background-color: #00F3BB;
-  font-size: 16px;
-  color: #060A24;
-  letter-spacing: 0;
-  line-height: 22px;
-}
-
-main .title div:hover {
-  -webkit-transition-duration: 1s;
-          transition-duration: 1s;
-  background-image: linear-gradient(225deg, #0000FE 0, #00F0B8 100%);
-  color: #FFFFFF;
-}
-
 main .oblicuo {
   position: relative;
   top: 0;
   left: 0;
   background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
   width: 100%;
-  height: 300px;
   -webkit-transform: skewY(-6deg);
           transform: skewY(-6deg);
   -webkit-transform-origin: top right;
@@ -258,7 +270,6 @@ main .oblicuo {
 }
 
 main .episodios {
-  z-index: 10;
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: episodios;
@@ -342,7 +353,7 @@ main .episodios .embed-container iframe {
 }
 
 main .nosotros {
-  z-index: 20;
+  margin-top: 37px;
   width: 100%;
   -ms-grid-row: 3;
   -ms-grid-column: 1;
@@ -354,12 +365,15 @@ main .nosotros {
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
+  position: relative;
+  top: -95.5px;
 }
 
 main .nosotros article {
-  width: 100%;
   position: relative;
-  top: -95.5px;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 main .nosotros article div.phone_over {
@@ -368,6 +382,7 @@ main .nosotros article div.phone_over {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-bottom: 27px;
 }
 
 main .nosotros article div.phone_over img {
@@ -378,38 +393,178 @@ main .nosotros article div.phone_over img {
   height: 519px;
 }
 
-main .nosotros article p {
-  padding-left: 16px;
+main .nosotros article h2 {
+  margin: 0 16px 8px 16px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 90%;
+  text-transform: initial;
+  font-size: 36px;
+  color: #060A24;
+  letter-spacing: 0;
+  line-height: 42px;
+}
+
+main .nosotros article p {
+  margin: 0 16px 54px 16px;
+  height: 254px;
+  font-size: 14px;
+  color: #060A24;
+  letter-spacing: 0;
+  line-height: 22px;
 }
 
 main .entrevistas {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: entrevistas;
+  width: 100%;
+  position: relative;
+  top: -95.5px;
 }
 
-main .entrevistas img {
-  width: 50%;
+main .entrevistas h2 {
+  margin: 0 16px 14px 16px;
+  font-size: 36px;
+  color: #060A24;
+  letter-spacing: 0;
+  line-height: 42px;
+}
+
+main .entrevistas div {
+  width: 100%;
+  height: 243px;
+}
+
+main .entrevistas div img {
+  width: 320px;
+  height: 243px;
 }
 
 main .topicos {
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: topicos;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  position: relative;
+  top: -95.5px;
 }
 
-main .topicos img {
-  width: 50%;
+main .topicos article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .topicos article h2 {
+  text-align: start;
+  margin: 48px 16px 37px 16px;
+  font-size: 36px;
+  color: #060A24;
+  letter-spacing: 0;
+  line-height: 42px;
+}
+
+main .topicos article p {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: #060A24;
+  letter-spacing: 0;
+  text-align: center;
+  margin: 13px 16px 36px 16px;
+}
+
+main .topicos article p.p65 {
+  margin-bottom: 65px;
+}
+
+main .topicos article p.p42 {
+  margin-bottom: 42px;
+}
+
+main .topicos article img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 104px;
+}
+
+main .topicos .novedades {
+  overflow: hidden;
+  width: 100%;
+  height: 341px;
+}
+
+main .topicos .novedades div {
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+main .topicos .novedades div h2 {
+  margin: 64px 16px 36px 16px;
+  -webkit-transform: skewY(6deg);
+          transform: skewY(6deg);
+  font-size: 36px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 42px;
+}
+
+main .topicos .novedades div .btn {
+  -webkit-transform: skewY(6deg);
+          transform: skewY(6deg);
+  margin-bottom: 67px;
 }
 
 footer {
+  height: calc(100% - 95px);
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: _footer;
+  margin-bottom: 31px;
+}
+
+footer p {
+  width: 227px;
+  height: 22px;
+  margin: 24px 46px 16px 47px;
+}
+
+footer ul {
+  list-style: none;
+  width: 100%;
+  height: 28px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 @media screen and (min-width: 500px) {
