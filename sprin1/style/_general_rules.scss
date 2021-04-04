@@ -4,9 +4,8 @@
     box-sizing: border-box;
 }
 
-
-
 .grid_body{
+    
     display: grid;
     grid-template-areas:"_header"
                         "_main"
