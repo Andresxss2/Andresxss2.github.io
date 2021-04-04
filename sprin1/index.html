@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Postcast</title>
+    <title>Podcast</title>
     <link rel="stylesheet" href="/style/style.css">
     <!--Tipografia-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -27,7 +27,7 @@
                 <span></span>
                 <span></span>
                 <span></span>
-                <ul>
+                <ul class="menu_pc">
                     <li><a href="#episodios">episodios</a></li>
                     <li><a href="#nosotros">nosotros</a></li>
                     <li><a href="#entrevistas">entrevistas</a></li>
@@ -41,60 +41,60 @@
 
     <main class="grid_main">
 
-        <section class="contenido title " id="title">
+        <section class="title " id="title">
             <h1>Hello <span>world</span> pale blue dot.</h1>
             <P>Un podcast que explora el mundo de la programación. Nuevos episodios, todos los jueves cada 15 días.
             </P>
             <div class="btn">conocé más</div>
         </section>
 
-        <section class="contenido episodios oblicuo " id="episodios">
-            <article>
-                <h2> Episodios</h2>
+        <section class="episodios oblicuo " id="episodios">
 
-                <div class="pc embed-container">
+            <article>
+                <h2 class="Pod_title"> Episodios</h2>
+                <div class="pc Pod1">
                     <iframe src="https://open.spotify.com/embed-podcast/episode/7AZZy2nJ4R9ZndHW0h2yxt"
                         allowtransparency="true" allow="encrypted-media">
                     </iframe>
                 </div>
 
-                <div class="pc embed-container">
+                <div class="pc Pod2">
                     <iframe src="https://open.spotify.com/embed-podcast/episode/1ezdL2ivAGLwSE6Xbssxqt"
                         allowtransparency="true" allow="encrypted-media">
                     </iframe>
                 </div>
 
-                <div class="pc embed-container">
+                <div class="pc Pod3">
                     <iframe src="https://open.spotify.com/embed-podcast/episode/3cWta1iiQSfvrdHaCbLkSD"
                         allowtransparency="true" allow="encrypted-media">
                     </iframe>
                 </div>
 
-                <div class="pc embed-container">
+                <div class="pc Pod4">
                     <iframe src="https://open.spotify.com/embed-podcast/episode/31VyAQAwBiKoHVoYUCEzjQ"
                         allowtransparency="true" allow="encrypted-media">
                     </iframe>
                 </div>
 
-                <div class="movile embed-container">
+                <div class="movile ">
                     <iframe src="https://open.spotify.com/embed-podcast/episode/7AZZy2nJ4R9ZndHW0h2yxt"
                         allowtransparency="true" allow="encrypted-media">
                     </iframe>
                 </div>
 
-                <div class="movile embed-container">
+                <div class="movile ">
                     <iframe src="https://open.spotify.com/embed-podcast/episode/1ezdL2ivAGLwSE6Xbssxqt"
                         allowtransparency="true" allow="encrypted-media">
                     </iframe>
                 </div>
 
-                <div class="movile embed-container">
+                <div class="movile ">
                     <iframe src="https://open.spotify.com/embed-podcast/episode/3cWta1iiQSfvrdHaCbLkSD"
                         allowtransparency="true" allow="encrypted-media">
                     </iframe>
                 </div>
 
-                <div class="movile embed-container">
+                <div class="movile padding_Phone">
                     <iframe src="https://open.spotify.com/embed-podcast/episode/31VyAQAwBiKoHVoYUCEzjQ"
                         allowtransparency="true" allow="encrypted-media">
                     </iframe>
@@ -103,24 +103,27 @@
             </article>
         </section>
 
-        <section class="contenido nosotros " id="nosotros">
+        <section class="nosotros " id="nosotros">
             <article>
                 <div class="phone_over">
                     <img src="/images/phone.png" alt="Women_In_Coding">
                 </div>
-                <h2>De dónde venimos</h2>
-                <p>Our posturings, our imagined self-importance, the delusion that we have some privileged position in
-                    the Universe, are
-                    challenged by this point of pale light.
-                    <br>
-                    Our planet is a lonely speck in the great enveloping cosmic dark. In our obscurity, in all this
-                    vastness, there is no
-                    hint that help will come from elsewhere to save us from ourselves.
-                </p>
+                <div>
+                    <h2>De dónde venimos</h2>
+                    <p>Our posturings, our imagined self-importance, the delusion that we have some privileged position
+                        in
+                        the Universe, are
+                        challenged by this point of pale light.
+                        <br>
+                        Our planet is a lonely speck in the great enveloping cosmic dark. In our obscurity, in all this
+                        vastness, there is no
+                        hint that help will come from elsewhere to save us from ourselves.
+                    </p>
+                </div>
             </article>
         </section>
 
-        <section class="contenido entrevistas " id="entrevistas">
+        <section class="entrevistas " id="entrevistas">
             <article>
                 <h2>Invitadas/os estelares</h2>
                 <div><img src="/images/grace-hopper.png" alt="grace-hopper"> </div>
@@ -134,17 +137,23 @@
             </article>
         </section>
 
-        <section class="contenido topicos " id="topicos">
+        <section class="topicos" id="topicos">
             <article>
                 <h2>Algunos de nuestros temas</h2>
-                <img src="/images/icon1.svg" alt="Trabajo_Remoto">
-                <p>Trabajo remoto</p>
-                <img src="/images/icon2.svg" alt="Repensando la programación">
-                <p class="p65">Repensando la programación</p>
-                <img src="/images/icon3.svg" alt="Bases del código">
-                <p class="p65">Bases del código</p>
-                <img src="/images/icon4.svg" alt="Seguridad informática">
-                <p class="p42">Seguridad informática</p>
+                <div>
+                    <img class="img1" src="/images/icon1.svg" alt="Trabajo_Remoto">
+                    <p class="P_1">Trabajo remoto</p>
+
+                    <img class="img2" src="/images/icon2.svg" alt="Repensando la programación">
+                    <p class="p65 P_2">Repensando la programación</p>
+
+                    <img class="img3" src="/images/icon3.svg" alt="Bases del código">
+                    <p class="p65 P_3">Bases del código</p>
+
+                    <img class="img4" src="/images/icon4.svg" alt="Seguridad informática">
+                    <p class="p42 P_4">Seguridad informática</p>
+                </div>
+
             </article>
 
             <article class=" novedades">
