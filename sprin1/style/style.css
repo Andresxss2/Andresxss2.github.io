@@ -844,7 +844,7 @@ footer ul {
     margin: 22px 0 22px 100px;
   }
   header nav .menu ul {
-    position: relative;
+    position: absolute;
     top: 0;
     right: 0;
     overflow: hidden;
@@ -853,15 +853,21 @@ footer ul {
   }
   header nav .menu ul li {
     padding: 5px 10px;
+    margin: 26px 0 26px 0px;
     display: inline-block;
+  }
+  header nav .menu ul li:last-child {
+    margin-right: 100px;
   }
   header nav .menu ul li:hover {
     background: unset;
   }
   header nav .menu ul li a {
     padding: unset;
-    line-height: unset;
+    font-size: 16px;
     color: #060A24;
+    letter-spacing: 0;
+    line-height: 28px;
   }
   header nav .menu ul li a:hover {
     color: #00F3BB;
@@ -887,17 +893,36 @@ footer ul {
             justify-content: flex-end;
     width: 68px;
     height: 26px;
-    padding-right: 20px;
     list-style: none;
     text-transform: capitalize;
-    margin: 26px 100px 26px 0px;
   }
   main {
+    /* ***********************************************Seccion title ************************************************************/
     /* *********************************************        Seccion Episodios   ****************************************************** */
     /* *********************************************        Seccion nosotros   ****************************************************** */
     /* *********************************************        Seccion entrevistas     ******************************************** */
     /* *********************************************        Seccion topicos   ****************************************************** */
     /* *********************************************     Seccion topicos ==> Novedades   ******************************************* */
+  }
+  main section.title h1 {
+    font-size: 64px;
+    margin-top: 120px;
+    margin-left: 200px;
+  }
+  main section.title h1 span {
+    padding: unset;
+  }
+  main section.title p {
+    margin-left: 200px;
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  main section.title div.btn {
+    width: 226px;
+    height: 56px;
+    margin-top: 56px;
+    margin-left: 200px;
   }
   main .episodios .movile {
     display: none;
