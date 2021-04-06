@@ -61,6 +61,7 @@
                 padding-right: 20px;
                 list-style: none;
                 text-transform: capitalize;
+                margin: 26px 100px 26px 0px;
 
             }
         }
@@ -82,6 +83,12 @@
                 display: unset;
                 max-width: 584px;
                 min-height: 232px;
+            }
+            section.episodios.oblicuo article h2.Pod_title{
+                margin: 186px 0 26px 200px;
+                font-size: 48px;
+                
+                
             }
             
             .Pod_title{
@@ -179,12 +186,15 @@
                 grid-template-areas:"h2 h2 h2"
                                     "div div div"
                                     "div div div";
-                grid-template-columns: 480px 480px 480px;
+                grid-template-columns:auto;
                 grid-template-rows: 162px 364px 364px;
+            }
+            .entrevistas article div {
+                width: 100%;
             }
             .entrevistas article div img{
                 grid-area: div;
-                width: 480px;
+                width: 100%;
                 min-height:364px;
             }
 
@@ -259,7 +269,7 @@
                 color: #FFFFFF;
                 letter-spacing: 0;
                 text-align: center;
-                width: 692px;
+                width: 702px;
                 height: 62px;
                 margin: 213px 374px 36px 374px;
             
@@ -268,6 +278,11 @@
                 width: 345px;
                 height: 56px;
                 margin: 0 548px 151px 547px;
+                font-size: 18px;
+                color: #060A24;
+                letter-spacing: 0;
+                text-align: center;
+                line-height: 24px;
             }
 
         }
@@ -311,7 +326,26 @@
             }
         }  
     }
-
+    @media  screen and(min-width: 1440px) {
+       
+        body{
+            max-width: 1440px;
+            padding-left: calc((100% - 1440px)/2);
+            
+            
+        }
+        main .episodios.oblicuo, .topicos {
+            max-width: 1440px;
+        }
+        .entrevistas article div {
+                width: 100%;
+        }
+        .entrevistas article div img{
+                grid-area: div;
+                width: 100%;
+                min-height:364px;
+        }
+    }
 
 /*
 header{

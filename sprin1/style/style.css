@@ -429,7 +429,7 @@ main .btn {
   height: 48px;
   margin: 36px 5% 24px 5%;
   font-family: 'IBM Plex Mono', monospace,sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   background-color: #00F3BB;
   font-size: 16px;
   color: #060A24;
@@ -538,8 +538,7 @@ main .episodios article {
 
 main .episodios h2 {
   font-weight: 400;
-  margin: calc(100vw/5) 0 21px 16px;
-  /* " *** calc(100vw/5) *** " El calculo de la altura del h2 a top varia en funcion del ancho de la pantalla ya que este afecta el agulo de inclinacion del contenedor, por lo que se saca la relacion el ancho de la pantalla 320px y la margen top 64px lo cual da 320/64= 5. Entonces para que sea adaptable solo es tener el ancho de la pantalla 100vw/5 asi conserva la relacion. */
+  margin: 110px 0 21px 16px;
   width: 157px;
   height: 42px;
   text-transform: capitalize;
@@ -891,6 +890,7 @@ footer ul {
     padding-right: 20px;
     list-style: none;
     text-transform: capitalize;
+    margin: 26px 100px 26px 0px;
   }
   main {
     /* *********************************************        Seccion Episodios   ****************************************************** */
@@ -912,6 +912,10 @@ footer ul {
     display: unset;
     max-width: 584px;
     min-height: 232px;
+  }
+  main section.episodios.oblicuo article h2.Pod_title {
+    margin: 186px 0 26px 200px;
+    font-size: 48px;
   }
   main .Pod_title {
     -ms-grid-row: 1;
@@ -1011,10 +1015,13 @@ footer ul {
     display: -ms-grid;
     display: grid;
         grid-template-areas: "h2 h2 h2" "div div div" "div div div";
-    -ms-grid-columns: 480px 480px 480px;
-        grid-template-columns: 480px 480px 480px;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
     -ms-grid-rows: 162px 364px 364px;
         grid-template-rows: 162px 364px 364px;
+  }
+  main .entrevistas article div {
+    width: 100%;
   }
   main .entrevistas article div img {
     -ms-grid-row: 2;
@@ -1022,7 +1029,7 @@ footer ul {
     -ms-grid-column: 1;
     -ms-grid-column-span: 3;
     grid-area: div;
-    width: 480px;
+    width: 100%;
     min-height: 364px;
   }
   main section.topicos article:first-child div {
@@ -1109,7 +1116,7 @@ footer ul {
     color: #FFFFFF;
     letter-spacing: 0;
     text-align: center;
-    width: 692px;
+    width: 702px;
     height: 62px;
     margin: 213px 374px 36px 374px;
   }
@@ -1117,6 +1124,11 @@ footer ul {
     width: 345px;
     height: 56px;
     margin: 0 548px 151px 547px;
+    font-size: 18px;
+    color: #060A24;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 24px;
   }
   footer section {
     width: 100%;
@@ -1152,6 +1164,24 @@ footer ul {
   footer section ul li a i {
     width: 18px;
     height: 28px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    max-width: 1440px;
+    padding-left: calc((100% - 1440px)/2);
+  }
+  main .episodios.oblicuo, .topicos {
+    max-width: 1440px;
+  }
+  .entrevistas article div {
+    width: 100%;
+  }
+  .entrevistas article div img {
+    grid-area: div;
+    width: 100%;
+    min-height: 364px;
   }
 }
 

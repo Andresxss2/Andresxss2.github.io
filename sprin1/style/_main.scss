@@ -21,7 +21,7 @@ main{
         height: 48px;
         margin: 36px 5% 24px 5%;
         font-family: 'IBM Plex Mono', monospace,sans-serif;
-        font-weight: 500;
+        font-weight: 600;
         background-color: $button_back_ground_color;
         font-size: 16px;
         color: #060A24;
@@ -110,8 +110,7 @@ main{
         
         h2{
             font-weight: 400;
-            margin: calc(100vw/5) 0 21px 16px; 
-            /* " *** calc(100vw/5) *** " El calculo de la altura del h2 a top varia en funcion del ancho de la pantalla ya que este afecta el agulo de inclinacion del contenedor, por lo que se saca la relacion el ancho de la pantalla 320px y la margen top 64px lo cual da 320/64= 5. Entonces para que sea adaptable solo es tener el ancho de la pantalla 100vw/5 asi conserva la relacion. */
+            margin: 110px 0 21px 16px; 
             width: 157px;
             height: 42px;
             text-transform: capitalize;
