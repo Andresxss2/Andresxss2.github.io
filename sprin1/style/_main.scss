@@ -44,9 +44,11 @@ main{
         font-family: 'IBM Plex Mono', monospace,sans-serif;
         font-weight: 400;
     }
+
     .title {   
         grid-area: title;
         font-family: 'IBM Plex Mono', monospace,sans-serif;
+        
         h1{
             font-family: 'IBM Plex Sans', sans-serif;
             font-weight: 400;
@@ -61,7 +63,15 @@ main{
                 padding-right:42px;
             }
         }
-        p{
+        p span{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        p span::before{
+            content: ".";
+        }
+        p.style_parrafo{
             font-weight: 400;
             width: 90%;
             height: 66px;
@@ -70,7 +80,9 @@ main{
             color: #060A24;
             letter-spacing: 0;
             line-height: 22px;
+            max-width: 640px;
         }
+
         
     }
     
@@ -195,6 +207,7 @@ main{
                 color: #060A24;
                 letter-spacing: 0;
                 line-height: 22px;
+                max-width: 638px;
             }
         }
     } 
