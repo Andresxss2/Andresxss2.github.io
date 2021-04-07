@@ -10,10 +10,46 @@ main{
     grid-template-rows: auto;
     
     font-family: IBMPlexSans,sans-serif;
-    
+    .btn a{
+        
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        width: 90%;
+        height: 48px;
+        margin: 36px 5% 24px 5%;
+        font-family: 'IBM Plex Mono', monospace,sans-serif;
+        font-weight: 600;
+        background-color: $button_back_ground_color;
+        font-size: 16px;
+        color: #060A24;
+        letter-spacing: 0;
+        line-height: 22px;
+        text-decoration: none;
+        &:hover{
+            transition-duration:1s;
+            background-image: linear-gradient(225deg, #0000FE 0, #00F0B8 100%);
+            color: #FFFFFF;
+        }    
+    }
+
+    h2{
+        width: 90%;
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-weight: 400;
+    }
+    p{
+        width: 90%;
+        font-family: 'IBM Plex Mono', monospace,sans-serif;
+        font-weight: 400;
+    }
+
     .title {   
         grid-area: title;
         font-family: 'IBM Plex Mono', monospace,sans-serif;
+        
         h1{
             font-family: 'IBM Plex Sans', sans-serif;
             font-weight: 400;
@@ -28,7 +64,15 @@ main{
                 padding-right:42px;
             }
         }
-        p{
+        p span{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        p span::before{
+            content: ".";
+        }
+        p.style_parrafo{
             font-weight: 400;
             width: 90%;
             height: 66px;
@@ -37,24 +81,10 @@ main{
             color: #060A24;
             letter-spacing: 0;
             line-height: 22px;
+            max-width: 640px;
         }
-        div{
-            display: flex;
-            flex-flow: column wrap;
-            align-items: center;
-            justify-content: center;
-            text-transform: uppercase;
-            width: 90%;
-            height: 48px;
-            margin: 36px 5% 24px 5%;
-            font-weight: 500;
-            background-color: $button_back_ground_color;
-            font-size: 16px;
-            color: #060A24;
-            letter-spacing: 0;
-            line-height: 22px;
-            
-        }
+
+        
     }
     
     .oblicuo {
@@ -63,30 +93,37 @@ main{
         left: 0;
         background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
         width: 100%;
-        height:300px;
         transform: skewY(-6deg);
         transform-origin: top right;
         
     }
 
     .episodios{
+        
         grid-area: episodios;
         width: 100%;
-        height: 1203.5px;
+        height: 100%;
+        overflow: hidden;
         display: flex;
         flex-flow: row wrap;
-        
+
+        align-items: center;
+        justify-content: center;
+        div{
+            width: 100%;
+        }
         article{
             width: 100%;
+            height: auto;
             transform: skewY(6deg);
             transform-origin: top right;
+            
         }
         
         
         h2{
             font-weight: 400;
-            margin: calc(100vw/5) 0 21px 16px; 
-            /* " *** calc(100vw/5) *** " El calculo de la altura del h2 a top varia en funcion del ancho de la pantalla ya que este afecta el agulo de inclinacion del contenedor, por lo que se saca la relacion el ancho de la pantalla 320px y la margen top 64px lo cual da 320/64= 5. Entonces para que sea adaptable solo es tener el ancho de la pantalla 100vw/5 asi conserva la relacion. */
+            margin: 110px 0 21px 16px; 
             width: 157px;
             height: 42px;
             text-transform: capitalize;
@@ -111,41 +148,180 @@ main{
             transform: none;
             transform-origin: none;
         }
-    }
-
-    .nosotros{
-        grid-area: nosotros;
-        display: flex;
-        flex-flow: row nowrap; 
-        position: relative;
-        top:0;
-        .phone_over{
-            width: 100%;
-            overflow: hidden;
-
-            img{
-                width: 360px;
-                height: 519px;
-            }
+        iframe{
+            border: none;
+            width: 100.82%;
+            max-width: 584px;
+            min-height: 231px;
+            
+        }
+        .padding_Phone{
+            margin-bottom: 143.5px ;
         }
         
-        p{  
-            align-items: center;
-            width: 90%;
+
+    }
+    
+
+    .nosotros{
+        margin-top: 37px;
+        width: 100%;
+        grid-area: nosotros;
+        display: flex;
+        flex-flow: row nowrap;
+        position: relative;
+        top: -95.5px;
+        article{
+            position: relative;
+            top:0;
+            left: 0;
+            width: 100%;
+            div.phone_over{
+                width: 320px;
+                overflow: hidden;
+                align-items: center;
+                img{
+                    position: relative;
+                    top:0;
+                    left: -20px;
+                    width: 360px;
+                    height: 519px;
+                    
+                }
+                padding-bottom: 27px;
+            }
+            
+            h2{  
+                margin: 0 16px 8px 16px;
+                align-items: center;
+                text-transform:initial;
+                font-size: 36px;
+                color: #060A24;
+                letter-spacing: 0;
+                line-height: 42px;
+                
+            }
+            p{
+                margin: 0 16px 54px 16px;
+                height: 254px;
+                font-size: 14px;
+                color: #060A24;
+                letter-spacing: 0;
+                line-height: 22px;
+                max-width: 638px;
+            }
         }
     } 
     
     .entrevistas{
         grid-area: entrevistas;
-        img{
-            width: 50%;
+        width: 100%;
+        position: relative;
+        top: -95.5px;
+        h2{
+            margin: 0 16px 14px 16px ;
+            font-size: 36px;
+            color: #060A24;
+            letter-spacing: 0;
+            line-height: 42px;
+
         }
+        div{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            width: 100%;
+            height:243px;
+            img{
+                width: 320px;
+                height: 243px;
+            
+            }
+        }
+        
+        
     }
     .topicos{
+
         grid-area: topicos;
-        img{
-            width: 50%;
+        display: flex;
+        flex-flow: row wrap;
+        position: relative;
+        top: -95.5px;
+        
+        article:first-child div{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+        
+        article{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            
+            h2{
+                text-align: start;
+                margin: 48px 16px 37px 16px;
+                font-size: 36px;
+                color: #060A24;
+                letter-spacing: 0;
+                line-height: 42px;
+                
+            }
+            p{
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-weight: 600;
+                font-size: 24px;
+                color: #060A24;
+                letter-spacing: 0;
+                text-align: center;
+                margin: 13px 16px 36px 16px;
+                
+                
+            }
+            p.p65{
+                margin-bottom: 65px;
+            }
+            p.p42{
+                margin-bottom: 42px;
+            }
+            
+            img{
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                width: 104px;
+
+            }
+        }
+        .novedades{
+            overflow: hidden;
+            width: 100%;
+            height: 341px;
+            
+            div {
+                transform-origin: top right;
+                h2{
+                    margin: 64px 16px 36px 16px ;
+                    transform: skewY(6deg);
+                    font-size: 36px;
+                    color: #FFFFFF;
+                    letter-spacing: 0;
+                    text-align: center;
+                    line-height: 42px;
+                
+                }
+                .btn a{
+                    
+                    transform: skewY(6deg);
+                    margin-bottom: 67px;
+                    text-decoration: none;
+                }
+            }
+
         }
     }
+
 
 }
