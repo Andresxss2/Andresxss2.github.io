@@ -410,7 +410,7 @@ main {
   font-family: IBMPlexSans,sans-serif;
 }
 
-main .btn {
+main .btn a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -435,9 +435,10 @@ main .btn {
   color: #060A24;
   letter-spacing: 0;
   line-height: 22px;
+  text-decoration: none;
 }
 
-main .btn:hover {
+main .btn a:hover {
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
   background-image: linear-gradient(225deg, #0000FE 0, #00F0B8 100%);
@@ -801,10 +802,11 @@ main .topicos .novedades div h2 {
   line-height: 42px;
 }
 
-main .topicos .novedades div .btn {
+main .topicos .novedades div .btn a {
   -webkit-transform: skewY(6deg);
           transform: skewY(6deg);
   margin-bottom: 67px;
+  text-decoration: none;
 }
 
 footer {
@@ -840,6 +842,10 @@ footer ul {
       justify-content: space-around;
 }
 
+footer ul a {
+  color: black;
+}
+
 @media screen and (min-width: 321px) {
   section.title .punto_color {
     color: #0000EC;
@@ -854,7 +860,7 @@ footer ul {
     padding: unset;
   }
   section.entrevistas article div img {
-    width: 50%;
+    width: 80%;
     padding-bottom: 10px;
   }
 }
@@ -889,7 +895,7 @@ footer ul {
     width: 90%;
     padding-bottom: 10px;
   }
-  main section.topicos article.novedades div.oblicuo div {
+  main section.topicos article.novedades div.oblicuo div a {
     margin: 64px 16px 64px 16px;
   }
 }
@@ -1246,10 +1252,10 @@ footer ul {
             justify-content: flex-end;
   }
   footer section ul li {
-    margin: 36px 36px 31px 0;
+    margin: 0 36px 31px 0;
   }
   footer section ul li:last-child {
-    margin: 36px 100px 31px 0;
+    margin: 0 100px 31px 0;
   }
   footer section ul li a i {
     width: 18px;
@@ -1274,44 +1280,4 @@ footer ul {
     min-height: 364px;
   }
 }
-
-/*
-header{
-     @media screen and (min-width:500px) {
-
-
-        /* Amburgueza */
-/*
-        nav .menu ul {
-            position: relative;
-            top: 0;
-            right: 0;
-            overflow: hidden;
-            background: unset;
-            height: unset;
-        }
-        nav .menu  ul li {
-            padding: 5px 10px;
-        } 
-        nav .menu  ul li:hover {
-            background: unset;
-            border-bottom: 2px solid black;
-        } 
-        nav .menu ul li a {
-            padding: unset;
-            line-height: unset;
-        }
-        nav .menu  ul li a:hover {
-            color: unset;
-        } 
-        nav .menu input {
-            display: none;
-        }
-        nav .menu span {
-            display: none;
-        }
-    }
-}
-
-*/
 /*# sourceMappingURL=style.css.map */
