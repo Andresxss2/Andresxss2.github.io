@@ -1,0 +1,1283 @@
+@charset "UTF-8";
+/*Variables Generales*/
+/*variables Header*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.grid_body {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "_header" "_main" "_footer";
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  grid-auto-rows: auto;
+  background-color: #FFFFFF;
+}
+
+/*
+
+*********************************************  IMPORTANTE  ***********************************************
+Se debe aber la carpeta independiente de acamica para que todas las direcciones queden bien establesidas**
+**********************************************************************************************************
+
+-Primero se debe crear el repocitoria de esta carpeta en git para no estar creando todo el tiempo versiones
+- Se deber organizar el grid_body para organizar los elementos
+- se debe generar la clase grid main para que los elementos se estructuren
+
+*/
+header {
+  z-index: 30;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: _header;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  width: 100%;
+  height: 44px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  /* amburgesa*/
+  /*animación del menu que se desplega*/
+  /*checkbox transparente y en primer plano*/
+  /*span -lineas del menu hamburguesa-*/
+  /*movimiento a cruz*/
+}
+
+header img {
+  width: 24px;
+  height: 24px;
+  margin: 10px 0 0 5%;
+}
+
+header nav .menu {
+  margin: 16px 19px 0 0;
+}
+
+header nav .menu ul {
+  /*posicion absolute para que se posicione debajo del resto del header - top medida del header*/
+  width: 100%;
+  position: absolute;
+  top: 45px;
+  right: 0;
+  overflow: hidden;
+  list-style: none;
+  background: #0000EC;
+  height: 0px;
+  -webkit-transition: height 0.5s ease;
+  transition: height 0.5s ease;
+}
+
+header nav .menu ul li {
+  position: relative;
+}
+
+header nav .menu ul li a {
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 16px 5%;
+  line-height: 28px;
+  display: block;
+}
+
+header nav .menu ul li a:hover {
+  text-decoration: line-through;
+  color: #00F3BB;
+}
+
+header nav .menu ul li a:active {
+  text-decoration: line-through;
+  color: rgba(6, 10, 36, 0.56);
+}
+
+header nav .menu input[type="checkbox"]:checked ~ ul {
+  height: 240px;
+  -webkit-transition: height 0.5s ease-in-out;
+  transition: height 0.5s ease-in-out;
+}
+
+header nav .menu {
+  padding-top: 3px;
+}
+
+header nav .menu input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  opacity: 0;
+  z-index: 2;
+  position: absolute;
+}
+
+header nav .menu span {
+  display: block;
+  width: 25px;
+  height: 2.5px;
+  margin-bottom: 6.5px;
+  position: relative;
+  background: #000;
+  z-index: 1;
+  -webkit-transform-origin: 3px 0px;
+          transform-origin: 3px 0px;
+  -webkit-transition: opacity 1.5s ease;
+  transition: opacity 1.5s ease;
+}
+
+header nav div.menu span {
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+  -webkit-animation: check_menu_out_first_child 0.75s ease-in-out;
+          animation: check_menu_out_first_child 0.75s ease-in-out;
+}
+
+header nav div.menu span:nth-last-child(2) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+  -webkit-animation: check_menu_out_last_child_2 0.4s ease-in-out;
+          animation: check_menu_out_last_child_2 0.4s ease-in-out;
+}
+
+header nav div.menu span:nth-last-child(3) {
+  -webkit-transform-origin: 0% 50%;
+          transform-origin: 0% 50%;
+  -webkit-animation: check_menu_out_last_child_3 0.75s ease-in-out;
+          animation: check_menu_out_last_child_3 0.75s ease-in-out;
+}
+
+header nav .menu input:checked ~ span {
+  -webkit-animation: check_menu_in 0.5s ease-in-out;
+          animation: check_menu_in 0.5s ease-in-out;
+  opacity: 1;
+  -webkit-transform: rotate(45deg) translate(2px, 1px);
+          transform: rotate(45deg) translate(2px, 1px);
+}
+
+header nav .menu input:checked ~ span:nth-last-child(3) {
+  -webkit-animation: check_menu_in 0.5s ease-in-out;
+          animation: check_menu_in 0.5s ease-in-out;
+  opacity: 0;
+  -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+          transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+header nav .menu input:checked ~ span:nth-last-child(2) {
+  -webkit-animation: check_menu_in 0.5s ease-in-out;
+          animation: check_menu_in 0.5s ease-in-out;
+  -webkit-transform: rotate(-45deg) translate(1px, 0px);
+          transform: rotate(-45deg) translate(1px, 0px);
+}
+
+@-webkit-keyframes check_menu_out_first_child {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(45deg) scale(1, 1);
+            transform: rotate(45deg) scale(1, 1);
+  }
+  40% {
+    opacity: 0.8;
+    -webkit-transform: rotate(30deg) scale(0.8, 0.8);
+            transform: rotate(30deg) scale(0.8, 0.8);
+  }
+  60% {
+    opacity: 0.5;
+    -webkit-transform: rotate(20deg) scale(0.5, 0.5);
+            transform: rotate(20deg) scale(0.5, 0.5);
+  }
+  80% {
+    opacity: 0.5;
+    -webkit-transform: rotate(10deg) scale(0.5, 0.5);
+            transform: rotate(10deg) scale(0.5, 0.5);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+            transform: rotate(0deg) scale(0.2, 0.2);
+  }
+}
+
+@keyframes check_menu_out_first_child {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(45deg) scale(1, 1);
+            transform: rotate(45deg) scale(1, 1);
+  }
+  40% {
+    opacity: 0.8;
+    -webkit-transform: rotate(30deg) scale(0.8, 0.8);
+            transform: rotate(30deg) scale(0.8, 0.8);
+  }
+  60% {
+    opacity: 0.5;
+    -webkit-transform: rotate(20deg) scale(0.5, 0.5);
+            transform: rotate(20deg) scale(0.5, 0.5);
+  }
+  80% {
+    opacity: 0.5;
+    -webkit-transform: rotate(10deg) scale(0.5, 0.5);
+            transform: rotate(10deg) scale(0.5, 0.5);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+            transform: rotate(0deg) scale(0.2, 0.2);
+  }
+}
+
+@-webkit-keyframes check_menu_out_last_child_2 {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(-45deg) scale(1, 1);
+            transform: rotate(-45deg) scale(1, 1);
+  }
+  40% {
+    opacity: 0.8;
+    -webkit-transform: rotate(-30deg) scale(0.8, 0.8);
+            transform: rotate(-30deg) scale(0.8, 0.8);
+  }
+  60% {
+    opacity: 0.5;
+    -webkit-transform: rotate(-20deg) scale(0.5, 0.5);
+            transform: rotate(-20deg) scale(0.5, 0.5);
+  }
+  80% {
+    opacity: 0.5;
+    -webkit-transform: rotate(-10deg) scale(0.5, 0.5);
+            transform: rotate(-10deg) scale(0.5, 0.5);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+            transform: rotate(0deg) scale(0.2, 0.2);
+  }
+}
+
+@keyframes check_menu_out_last_child_2 {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(-45deg) scale(1, 1);
+            transform: rotate(-45deg) scale(1, 1);
+  }
+  40% {
+    opacity: 0.8;
+    -webkit-transform: rotate(-30deg) scale(0.8, 0.8);
+            transform: rotate(-30deg) scale(0.8, 0.8);
+  }
+  60% {
+    opacity: 0.5;
+    -webkit-transform: rotate(-20deg) scale(0.5, 0.5);
+            transform: rotate(-20deg) scale(0.5, 0.5);
+  }
+  80% {
+    opacity: 0.5;
+    -webkit-transform: rotate(-10deg) scale(0.5, 0.5);
+            transform: rotate(-10deg) scale(0.5, 0.5);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+            transform: rotate(0deg) scale(0.2, 0.2);
+  }
+}
+
+@-webkit-keyframes check_menu_out_last_child_3 {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(0) scale(0.2, 0.2);
+            transform: rotate(0) scale(0.2, 0.2);
+  }
+  40% {
+    opacity: 0.4;
+    -webkit-transform: rotate(0) scale(0.4, 0.4);
+            transform: rotate(0) scale(0.4, 0.4);
+  }
+  60% {
+    opacity: 0.6;
+    -webkit-transform: rotate(0) scale(0.6, 0.6);
+            transform: rotate(0) scale(0.6, 0.6);
+  }
+  80% {
+    opacity: 0.8;
+    -webkit-transform: rotate(0) scale(0.8, 0.8);
+            transform: rotate(0) scale(0.8, 0.8);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(0) scale(1, 1);
+            transform: rotate(0) scale(1, 1);
+  }
+}
+
+@keyframes check_menu_out_last_child_3 {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotate(0) scale(0.2, 0.2);
+            transform: rotate(0) scale(0.2, 0.2);
+  }
+  40% {
+    opacity: 0.4;
+    -webkit-transform: rotate(0) scale(0.4, 0.4);
+            transform: rotate(0) scale(0.4, 0.4);
+  }
+  60% {
+    opacity: 0.6;
+    -webkit-transform: rotate(0) scale(0.6, 0.6);
+            transform: rotate(0) scale(0.6, 0.6);
+  }
+  80% {
+    opacity: 0.8;
+    -webkit-transform: rotate(0) scale(0.8, 0.8);
+            transform: rotate(0) scale(0.8, 0.8);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(0) scale(1, 1);
+            transform: rotate(0) scale(1, 1);
+  }
+}
+
+@-webkit-keyframes check_menu_in {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) scale(1, 1);
+            transform: rotate(0deg) scale(1, 1);
+  }
+  50% {
+    opacity: 0.8;
+    -webkit-transform: rotate(0deg) scale(0.8, 0.8);
+            transform: rotate(0deg) scale(0.8, 0.8);
+  }
+  80% {
+    opacity: 0.5;
+    -webkit-transform: rotate(0deg) scale(0.5, 0.5);
+            transform: rotate(0deg) scale(0.5, 0.5);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+            transform: rotate(0deg) scale(0.2, 0.2);
+  }
+}
+
+@keyframes check_menu_in {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) scale(1, 1);
+            transform: rotate(0deg) scale(1, 1);
+  }
+  50% {
+    opacity: 0.8;
+    -webkit-transform: rotate(0deg) scale(0.8, 0.8);
+            transform: rotate(0deg) scale(0.8, 0.8);
+  }
+  80% {
+    opacity: 0.5;
+    -webkit-transform: rotate(0deg) scale(0.5, 0.5);
+            transform: rotate(0deg) scale(0.5, 0.5);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+            transform: rotate(0deg) scale(0.2, 0.2);
+  }
+}
+
+main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: _main;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "title" "episodios" "nosotros" "entrevistas" "topicos";
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  font-family: IBMPlexSans,sans-serif;
+}
+
+main .btn a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-transform: uppercase;
+  width: 90%;
+  height: 48px;
+  margin: 36px 5% 24px 5%;
+  font-family: 'IBM Plex Mono', monospace,sans-serif;
+  font-weight: 600;
+  background-color: #00F3BB;
+  font-size: 16px;
+  color: #060A24;
+  letter-spacing: 0;
+  line-height: 22px;
+  text-decoration: none;
+}
+
+main .btn a:hover {
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  background-image: linear-gradient(225deg, #0000FE 0, #00F0B8 100%);
+  color: #FFFFFF;
+}
+
+main h2 {
+  width: 90%;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+}
+
+main p {
+  width: 90%;
+  font-family: 'IBM Plex Mono', monospace,sans-serif;
+  font-weight: 400;
+}
+
+main .title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: title;
+  font-family: 'IBM Plex Mono', monospace,sans-serif;
+}
+
+main .title h1 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  color: #060A24;
+  letter-spacing: 0;
+  line-height: 42px;
+  margin: 29px 0 0 16px;
+}
+
+main .title h1 span {
+  text-decoration: line-through;
+  padding-right: 42px;
+}
+
+main .title p span {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+main .title p span::before {
+  content: ".";
+}
+
+main .title p.style_parrafo {
+  font-weight: 400;
+  width: 90%;
+  height: 66px;
+  margin: 16px 5% 0 5%;
+  font-size: 14px;
+  color: #060A24;
+  letter-spacing: 0;
+  line-height: 22px;
+  max-width: 640px;
+}
+
+main .oblicuo {
+  position: relative;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+  width: 100%;
+  -webkit-transform: skewY(-6deg);
+          transform: skewY(-6deg);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+main .episodios {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: episodios;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .episodios div {
+  width: 100%;
+}
+
+main .episodios article {
+  width: 100%;
+  height: auto;
+  -webkit-transform: skewY(6deg);
+          transform: skewY(6deg);
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+main .episodios h2 {
+  font-weight: 400;
+  margin: 110px 0 21px 16px;
+  width: 157px;
+  height: 42px;
+  text-transform: capitalize;
+  font-size: 36px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  line-height: 42px;
+}
+
+main .episodios .pc {
+  display: none;
+}
+
+main .episodios .movile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 93.12%;
+  height: 225px;
+  margin: 0 0 11px 11px;
+  -webkit-transform: none;
+          transform: none;
+  -webkit-transform-origin: none;
+          transform-origin: none;
+}
+
+main .episodios iframe {
+  border: none;
+  width: 100.82%;
+  max-width: 584px;
+  min-height: 231px;
+}
+
+main .episodios .padding_Phone {
+  margin-bottom: 143.5px;
+}
+
+main .nosotros {
+  margin-top: 37px;
+  width: 100%;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: nosotros;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  position: relative;
+  top: -95.5px;
+}
+
+main .nosotros article {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+main .nosotros article div.phone_over {
+  width: 320px;
+  overflow: hidden;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 27px;
+}
+
+main .nosotros article div.phone_over img {
+  position: relative;
+  top: 0;
+  left: -20px;
+  width: 360px;
+  height: 519px;
+}
+
+main .nosotros article h2 {
+  margin: 0 16px 8px 16px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: initial;
+  font-size: 36px;
+  color: #060A24;
+  letter-spacing: 0;
+  line-height: 42px;
+}
+
+main .nosotros article p {
+  margin: 0 16px 54px 16px;
+  height: 254px;
+  font-size: 14px;
+  color: #060A24;
+  letter-spacing: 0;
+  line-height: 22px;
+  max-width: 638px;
+}
+
+main .entrevistas {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: entrevistas;
+  width: 100%;
+  position: relative;
+  top: -95.5px;
+}
+
+main .entrevistas h2 {
+  margin: 0 16px 14px 16px;
+  font-size: 36px;
+  color: #060A24;
+  letter-spacing: 0;
+  line-height: 42px;
+}
+
+main .entrevistas div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 243px;
+}
+
+main .entrevistas div img {
+  width: 320px;
+  height: 243px;
+}
+
+main .topicos {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: topicos;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  position: relative;
+  top: -95.5px;
+}
+
+main .topicos article:first-child div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .topicos article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .topicos article h2 {
+  text-align: start;
+  margin: 48px 16px 37px 16px;
+  font-size: 36px;
+  color: #060A24;
+  letter-spacing: 0;
+  line-height: 42px;
+}
+
+main .topicos article p {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: #060A24;
+  letter-spacing: 0;
+  text-align: center;
+  margin: 13px 16px 36px 16px;
+}
+
+main .topicos article p.p65 {
+  margin-bottom: 65px;
+}
+
+main .topicos article p.p42 {
+  margin-bottom: 42px;
+}
+
+main .topicos article img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 104px;
+}
+
+main .topicos .novedades {
+  overflow: hidden;
+  width: 100%;
+  height: 341px;
+}
+
+main .topicos .novedades div {
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+}
+
+main .topicos .novedades div h2 {
+  margin: 64px 16px 36px 16px;
+  -webkit-transform: skewY(6deg);
+          transform: skewY(6deg);
+  font-size: 36px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 42px;
+}
+
+main .topicos .novedades div .btn a {
+  -webkit-transform: skewY(6deg);
+          transform: skewY(6deg);
+  margin-bottom: 67px;
+  text-decoration: none;
+}
+
+footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: _footer;
+}
+
+footer p {
+  font-family: 'IBM Plex Mono', monospace,sans-serif;
+  font-size: 14px;
+  color: #060A24;
+  letter-spacing: 0;
+  line-height: 22px;
+  width: 227px;
+  height: 22px;
+  margin: 0 46px 16px 47px;
+}
+
+footer ul {
+  margin-bottom: 31px;
+  list-style: none;
+  width: 100%;
+  height: 28px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+footer ul a {
+  color: black;
+}
+
+@media screen and (min-width: 321px) {
+  section.title .punto_color {
+    color: #0000EC;
+  }
+  section.title p span::after {
+    content: " y la tecnología.";
+  }
+  section.title p span::before {
+    display: none;
+  }
+  section.title h1 span {
+    padding: unset;
+  }
+  section.entrevistas article div img {
+    width: 80%;
+    padding-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  main .title h1 {
+    margin: 29px 0 0 50px;
+  }
+  main .title p.style_parrafo {
+    margin-left: 50px;
+    max-width: 640px;
+  }
+  main .entrevistas article {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "h2 h2 " "div div" "div div" "div div";
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+  }
+  main .entrevistas article h2 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: h2;
+  }
+  main section.entrevistas article div {
+    width: 100%;
+  }
+  main section.entrevistas article div img {
+    width: 90%;
+    padding-bottom: 10px;
+  }
+  main section.topicos article.novedades div.oblicuo div a {
+    margin: 64px 16px 64px 16px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  header {
+    z-index: 30;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    height: 80px;
+    /*Se elemininan aspectos visualles del menu amburgesa*/
+  }
+  header img {
+    width: 36px;
+    height: 36px;
+    margin: 22px 0 22px 100px;
+  }
+  header nav .menu ul {
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    background: unset;
+    height: unset;
+  }
+  header nav .menu ul li {
+    padding: 5px 10px;
+    margin: 26px 0 26px 0px;
+    display: inline-block;
+  }
+  header nav .menu ul li:last-child {
+    margin-right: 100px;
+  }
+  header nav .menu ul li:hover {
+    background: unset;
+  }
+  header nav .menu ul li a {
+    padding: unset;
+    font-size: 16px;
+    color: #060A24;
+    letter-spacing: 0;
+    line-height: 28px;
+  }
+  header nav .menu ul li a:hover {
+    color: #00F3BB;
+  }
+  header nav .menu ul li a:active {
+    text-decoration: line-through;
+    color: rgba(6, 10, 36, 0.56);
+  }
+  header nav .menu input {
+    display: none;
+  }
+  header nav .menu span {
+    display: none;
+  }
+  header nav .menu_pc {
+    background-color: unset;
+    color: black;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    width: 68px;
+    height: 26px;
+    list-style: none;
+    text-transform: capitalize;
+  }
+  main {
+    /* ***********************************************Seccion title ************************************************************/
+    /* *********************************************        Seccion Episodios   ****************************************************** */
+    /* *********************************************        Seccion nosotros   ****************************************************** */
+    /* *********************************************        Seccion entrevistas     ******************************************** */
+    /* *********************************************        Seccion topicos   ****************************************************** */
+    /* *********************************************     Seccion topicos ==> Novedades   ******************************************* */
+  }
+  main section.title h1 {
+    font-size: 64px;
+    margin-top: 120px;
+    margin-left: 200px;
+  }
+  main section.title p.style_parrafo {
+    height: 48px;
+    margin-left: 200px;
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  main section.title div.btn {
+    width: 226px;
+    height: 56px;
+    margin-top: 56px;
+    margin-left: 200px;
+  }
+  main .episodios .movile {
+    display: none;
+  }
+  main .episodios article {
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "Pod_title Pod_title" "Pod1 Pod2"  "Pod3 Pod4";
+  }
+  main .episodios article .pc {
+    display: unset;
+    max-width: 584px;
+    min-height: 232px;
+  }
+  main section.episodios.oblicuo article h2.Pod_title {
+    margin: 186px 0 26px 200px;
+    font-size: 48px;
+  }
+  main .Pod_title {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: Pod_title;
+    width: 209px;
+    height: 62px;
+    font-size: 48px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    margin: 186px 0 0 200px;
+  }
+  main .pc.Pod1 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: Pod1;
+    margin: 26px 72px 72px 100px;
+  }
+  main .pc.Pod2 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: Pod2;
+    margin: 26px 100px 0 0;
+  }
+  main .pc.Pod3 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: Pod3;
+    margin: 0 72px 84px 100px;
+  }
+  main .pc.Pod4 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    grid-area: Pod4;
+    margin: 0 100px 84px 0;
+  }
+  main .nosotros {
+    top: -68.5px;
+  }
+  main .nosotros article div.phone_over {
+    overflow: unset;
+    width: 100%;
+  }
+  main .nosotros article {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+  }
+  main .nosotros article .phone_over img {
+    min-width: 457.6px;
+    height: 660px;
+    margin: 0 62.4px 64px 200px;
+  }
+  main .nosotros article div {
+    width: 100%;
+    height: 100%;
+  }
+  main .nosotros article div h2 {
+    width: 399px;
+    height: 62px;
+    margin: 189px 321px 24px 0;
+    font-size: 48px;
+    color: #060A24;
+    letter-spacing: 0;
+  }
+  main .nosotros article div p {
+    width: 464px;
+    height: 204px;
+    margin: 0 256px 0 0;
+    font-size: 16px;
+    color: #060A24;
+    letter-spacing: 0;
+    line-height: 24px;
+    max-width: 640px;
+  }
+  main .entrevistas {
+    width: 100%;
+    height: auto;
+  }
+  main .entrevistas article h2 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: h2;
+    width: 481px;
+    height: 62px;
+    margin: 64px 0 36px 200px;
+    font-size: 48px;
+    color: #060A24;
+    letter-spacing: 0;
+  }
+  main .entrevistas article {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "h2 h2 h2" "div div div" "div div div";
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    -ms-grid-rows: 162px 364px 364px;
+        grid-template-rows: 162px 364px 364px;
+  }
+  main .entrevistas article div {
+    width: 100%;
+  }
+  main .entrevistas article div img {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-area: div;
+    width: 100%;
+    min-height: 364px;
+  }
+  main section.topicos article:first-child div {
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "img1 img2 img3 img4" "P_1 P_2 P_3 P_4";
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  main .topicos article div img {
+    margin: 0 156px 29px 0;
+  }
+  main .topicos article div p {
+    margin: 0 40px 66px 0;
+    width: 220px;
+    height: 32px;
+  }
+  main .topicos article div .img1 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: img1;
+    margin-left: 278px;
+  }
+  main .topicos article div .P_1 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: P_1;
+    height: 64px;
+    margin-left: 220px;
+  }
+  main .topicos article div .img2 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: img2;
+  }
+  main .topicos article div .P_2 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: P_2;
+    margin-bottom: 34px;
+  }
+  main .topicos article div .img3 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: img3;
+  }
+  main .topicos article div .P_3 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    grid-area: P_3;
+  }
+  main .topicos article div .img4 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+    grid-area: img4;
+    margin-right: 278px;
+  }
+  main .topicos article div .P_4 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 4;
+    grid-area: P_4;
+    height: 64px;
+    margin-right: 220px;
+    margin-bottom: 34px;
+  }
+  main .topicos article h2 {
+    width: 100%;
+    height: 62px;
+    margin: 64px 0 69px 200px;
+    font-size: 48px;
+    color: #060A24;
+    letter-spacing: 0;
+  }
+  main section article.novedades {
+    min-height: 518px;
+  }
+  main section article.novedades div.oblicuo h2 {
+    -webkit-transform-origin: top right;
+            transform-origin: top right;
+    font-size: 48px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    width: 702px;
+    height: 62px;
+    margin: 213px 374px 36px 374px;
+  }
+  main section article.novedades div.oblicuo div {
+    width: 345px;
+    height: 56px;
+    margin: 0 548px 151px 547px;
+    font-size: 18px;
+    color: #060A24;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 24px;
+  }
+  footer section {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+  }
+  footer section p {
+    font-size: 16px;
+    color: #060A24;
+    letter-spacing: 0;
+    line-height: 28px;
+    width: 100%;
+    height: 28px;
+    margin: 0 0 31px 100px;
+  }
+  footer section ul {
+    margin: unset;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  footer section ul li {
+    margin: 0 36px 31px 0;
+  }
+  footer section ul li:last-child {
+    margin: 0 100px 31px 0;
+  }
+  footer section ul li a i {
+    width: 18px;
+    height: 28px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    max-width: 1440px;
+    padding-left: calc((100% - 1440px)/2);
+  }
+  main .episodios.oblicuo, .topicos {
+    max-width: 1440px;
+  }
+  .entrevistas article div {
+    width: 100%;
+  }
+  .entrevistas article div img {
+    grid-area: div;
+    width: 100%;
+    min-height: 364px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
