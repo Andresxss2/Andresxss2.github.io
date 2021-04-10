@@ -12,8 +12,8 @@
   display: -ms-grid;
   display: grid;
       grid-template-areas: "_header" "_main" "_footer";
-  -ms-grid-columns: auto;
-      grid-template-columns: auto;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
   grid-auto-rows: auto;
   background-color: #FFFFFF;
 }
@@ -52,6 +52,11 @@ header {
           justify-content: space-between;
   /* amburgesa*/
   /*animación del menu que se desplega*/
+  /*
+    nav .menu {
+        padding-top: 3px;
+    }
+    */
   /*checkbox transparente y en primer plano*/
   /*span -lineas del menu hamburguesa-*/
   /*movimiento a cruz*/
@@ -109,10 +114,6 @@ header nav .menu input[type="checkbox"]:checked ~ ul {
   height: 240px;
   -webkit-transition: height 0.5s ease-in-out;
   transition: height 0.5s ease-in-out;
-}
-
-header nav .menu {
-  padding-top: 3px;
 }
 
 header nav .menu input {
@@ -474,7 +475,7 @@ main .title h1 {
   margin: 29px 0 0 16px;
 }
 
-main .title h1 span {
+main .title h1 span:first-child {
   text-decoration: line-through;
   padding-right: 42px;
 }
@@ -616,14 +617,21 @@ main .nosotros {
 }
 
 main .nosotros article {
-  position: relative;
-  top: 0;
-  left: 0;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 main .nosotros article div.phone_over {
-  width: 320px;
+  width: 100%;
   overflow: hidden;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -694,7 +702,7 @@ main .entrevistas div {
 }
 
 main .entrevistas div img {
-  width: 320px;
+  width: 100%;
   height: 243px;
 }
 
@@ -847,7 +855,7 @@ footer ul a {
 }
 
 @media screen and (min-width: 321px) {
-  section.title .punto_color {
+  section.title h1 span.punto_color {
     color: #0000EC;
   }
   section.title p span::after {
@@ -856,11 +864,21 @@ footer ul a {
   section.title p span::before {
     display: none;
   }
-  section.title h1 span {
+  section.title h1 span:first-child {
     padding: unset;
   }
+  section.entrevistas article div:nth-child(1n) {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  section.entrevistas article div:nth-child(2n) {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
   section.entrevistas article div img {
-    width: 80%;
+    max-width: 350px;
     padding-bottom: 10px;
   }
 }
@@ -872,6 +890,9 @@ footer ul a {
   main .title p.style_parrafo {
     margin-left: 50px;
     max-width: 640px;
+  }
+  main .nosotros article div.phone_over {
+    width: 65%;
   }
   main .entrevistas article {
     display: -ms-grid;
@@ -891,12 +912,14 @@ footer ul a {
   main section.entrevistas article div {
     width: 100%;
   }
-  main section.entrevistas article div img {
-    width: 90%;
-    padding-bottom: 10px;
+  main .entrevistas article div img.width_responsive {
+    max-width: 350px;
   }
-  main section.topicos article.novedades div.oblicuo div a {
-    margin: 64px 16px 64px 16px;
+  main .entrevistas article div:nth-child(1n) {
+    padding: 0 10% 10px 0;
+  }
+  main .entrevistas article div:nth-child(2n) {
+    padding: 0 0 10px 10%;
   }
 }
 
@@ -1002,6 +1025,10 @@ footer ul a {
     display: -ms-grid;
     display: grid;
         grid-template-areas: "Pod_title Pod_title" "Pod1 Pod2"  "Pod3 Pod4";
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
   }
   main .episodios article .pc {
     display: unset;
@@ -1053,7 +1080,7 @@ footer ul a {
   }
   main .nosotros article div.phone_over {
     overflow: unset;
-    width: 100%;
+    width: 50%;
   }
   main .nosotros article {
     display: -webkit-box;
@@ -1064,7 +1091,8 @@ footer ul a {
         -ms-flex-flow: row nowrap;
             flex-flow: row nowrap;
   }
-  main .nosotros article .phone_over img {
+  main .nosotros article div.phone_over img {
+    position: unset;
     min-width: 457.6px;
     height: 660px;
     margin: 0 62.4px 64px 200px;
@@ -1116,10 +1144,13 @@ footer ul a {
     -ms-grid-rows: 162px 364px 364px;
         grid-template-rows: 162px 364px 364px;
   }
-  main .entrevistas article div {
+  main .entrevistas article div:nth-child(1n) {
     width: 100%;
+    padding: unset;
   }
-  main .entrevistas article div img {
+  main section.entrevistas article div img.width_responsive {
+    padding-bottom: unset;
+    max-width: unset;
     -ms-grid-row: 2;
     -ms-grid-row-span: 2;
     -ms-grid-column: 1;
@@ -1133,31 +1164,31 @@ footer ul a {
     display: -ms-grid;
     display: grid;
         grid-template-areas: "img1 img2 img3 img4" "P_1 P_2 P_3 P_4";
+    -ms-grid-columns: (18.3%)[4];
+        grid-template-columns: repeat(4, 18.3%);
+    -ms-grid-rows: (50%)[2];
+        grid-template-rows: repeat(2, 50%);
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-flow: column nowrap;
             flex-flow: column nowrap;
   }
   main .topicos article div img {
-    margin: 0 156px 29px 0;
+    margin: 2.3% 25.4%;
   }
   main .topicos article div p {
-    margin: 0 40px 66px 0;
-    width: 220px;
     height: 32px;
   }
   main .topicos article div .img1 {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: img1;
-    margin-left: 278px;
   }
   main .topicos article div .P_1 {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     grid-area: P_1;
-    height: 64px;
-    margin-left: 220px;
+    margin-left: 1.38%;
   }
   main .topicos article div .img2 {
     -ms-grid-row: 1;
@@ -1184,20 +1215,20 @@ footer ul a {
     -ms-grid-row: 1;
     -ms-grid-column: 4;
     grid-area: img4;
-    margin-right: 278px;
+    margin-right: 19.3%;
   }
   main .topicos article div .P_4 {
     -ms-grid-row: 2;
     -ms-grid-column: 4;
     grid-area: P_4;
     height: 64px;
-    margin-right: 220px;
+    margin-right: 1.38%;
     margin-bottom: 34px;
   }
   main .topicos article h2 {
     width: 100%;
-    height: 62px;
-    margin: 64px 0 69px 200px;
+    height: 14.5%;
+    margin-left: 13.9%;
     font-size: 48px;
     color: #060A24;
     letter-spacing: 0;
@@ -1206,25 +1237,34 @@ footer ul a {
     min-height: 518px;
   }
   main section article.novedades div.oblicuo h2 {
-    -webkit-transform-origin: top right;
-            transform-origin: top right;
+    -webkit-transform-origin: 118% 100%;
+            transform-origin: 118% 100%;
     font-size: 48px;
     color: #FFFFFF;
     letter-spacing: 0;
     text-align: center;
     width: 702px;
     height: 62px;
-    margin: 213px 374px 36px 374px;
+    margin: 200px 0 2% 16%;
   }
   main section article.novedades div.oblicuo div {
-    width: 345px;
+    -webkit-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+    -webkit-transform: skewY(6deg);
+            transform: skewY(6deg);
+    margin: 0 0 0 36%;
+    width: 30%;
     height: 56px;
-    margin: 0 548px 151px 547px;
     font-size: 18px;
     color: #060A24;
     letter-spacing: 0;
     text-align: center;
     line-height: 24px;
+  }
+  main section article.novedades div.oblicuo div.btn a {
+    -webkit-transform: skewY(0);
+            transform: skewY(0);
+    margin: unset;
   }
   footer section {
     width: 100%;
