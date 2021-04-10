@@ -1025,8 +1025,8 @@ footer ul a {
     display: -ms-grid;
     display: grid;
         grid-template-areas: "Pod_title Pod_title" "Pod1 Pod2"  "Pod3 Pod4";
-    -ms-grid-columns: auto;
-        grid-template-columns: auto;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
   }
@@ -1034,6 +1034,9 @@ footer ul a {
     display: unset;
     max-width: 584px;
     min-height: 232px;
+  }
+  main .episodios article .pc iframe {
+    width: 80%;
   }
   main section.episodios.oblicuo article h2.Pod_title {
     margin: 186px 0 26px 200px;
@@ -1055,25 +1058,25 @@ footer ul a {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
     grid-area: Pod1;
-    margin: 26px 72px 72px 100px;
+    margin: 26px 0 72px 100px;
   }
   main .pc.Pod2 {
     -ms-grid-row: 2;
     -ms-grid-column: 2;
     grid-area: Pod2;
-    margin: 26px 100px 0 0;
+    margin: 26px 0 72px 72px;
   }
   main .pc.Pod3 {
     -ms-grid-row: 3;
     -ms-grid-column: 1;
     grid-area: Pod3;
-    margin: 0 72px 84px 100px;
+    margin: 0 72px 164px 100px;
   }
   main .pc.Pod4 {
     -ms-grid-row: 3;
     -ms-grid-column: 2;
     grid-area: Pod4;
-    margin: 0 100px 84px 0;
+    margin: 0 0 164px 72px;
   }
   main .nosotros {
     top: -68.5px;
@@ -1098,7 +1101,7 @@ footer ul a {
     margin: 0 62.4px 64px 200px;
   }
   main .nosotros article div {
-    width: 100%;
+    width: 50%;
     height: 100%;
   }
   main .nosotros article div h2 {

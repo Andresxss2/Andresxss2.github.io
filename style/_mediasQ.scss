@@ -184,20 +184,27 @@
                 grid-template-areas:"Pod_title Pod_title"
                                     "Pod1 Pod2" 
                                     "Pod3 Pod4";
-                grid-template-columns: auto;
+                grid-template-columns: 50% 50%;
                 grid-template-rows: auto;
+                
             }
             .episodios article .pc{
                 display: unset;
                 max-width: 584px;
                 min-height: 232px;
+                
             }
+            .episodios article .pc iframe{
+                width: 80%;   
+            }
+
             section.episodios.oblicuo article h2.Pod_title{
                 margin: 186px 0 26px 200px;
                 font-size: 48px;
                 
                 
             }
+            
             
             .Pod_title{
                 grid-area: Pod_title;
@@ -212,20 +219,20 @@
             }
             .pc.Pod1{
                 grid-area: Pod1;
-                margin:26px 72px 72px 100px;
+                margin: 26px 0 72px 100px;
                 
             }
             .pc.Pod2{
                 grid-area: Pod2;
-                margin:26px 100px 0 0;
+                margin:26px 0 72px 72px;
             }
             .pc.Pod3{
                 grid-area: Pod3;
-                margin:0 72px 84px 100px;
+                margin:0 72px 164px 100px;
             }
             .pc.Pod4{
                 grid-area: Pod4;
-                margin:0 100px 84px 0;
+                margin:0 0 164px 72px;
             }
 
             /* *********************************************        Seccion nosotros   ****************************************************** */
@@ -251,7 +258,7 @@
             }
 
             .nosotros article div{
-                width: 100%;
+                width: 50%;
                 height: 100%;
             }
             .nosotros article div h2{
