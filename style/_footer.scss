@@ -27,9 +27,13 @@ footer{
         color: black;
         }
         &:hover{
+            transform:scale(2.5,2.5);
+
             transform:scale(2.6,2.6);
+
             color: aliceblue;
             border-radius: 5px;
         }
     }
+
 }
