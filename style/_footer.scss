@@ -16,14 +16,20 @@ footer{
         margin-bottom: 31px;
         list-style: none;
         width: 100%;
-        height: 28px;
+        height: 40px;
         display: flex;
         flex-flow: row nowrap;
         justify-content:space-around;
         
     }
-    ul a{
+    ul li{
+        a{
         color: black;
+        }
+        &:hover{
+            transform:scale(2.6,2.6);
+            color: aliceblue;
+            border-radius: 5px;
+        }
     }
-
 }
