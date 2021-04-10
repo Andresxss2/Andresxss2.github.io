@@ -855,8 +855,8 @@ footer ul li a {
 }
 
 footer ul li:hover {
-  -webkit-transform: scale(2.5, 2.5);
-          transform: scale(2.5, 2.5);
+  -webkit-transform: scale(2.6, 2.6);
+          transform: scale(2.6, 2.6);
   color: aliceblue;
   border-radius: 5px;
 }
