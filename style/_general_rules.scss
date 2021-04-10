@@ -10,7 +10,7 @@
     grid-template-areas:"_header"
                         "_main"
                         "_footer";
-    grid-template-columns: auto;
+    grid-template-columns: 100%;
     grid-auto-rows: auto;
     background-color: $back_ground_color;
 }
