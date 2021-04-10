@@ -254,7 +254,7 @@
                 position: unset;
                 min-width: 457.6px;
                 height: 660px;
-                margin: 0 62.4px 64px 200px; 
+                margin: 0 62.4px 64px 13.9%; 
             }
 
             .nosotros article div{
@@ -302,10 +302,19 @@
                 grid-template-columns:auto;
                 grid-template-rows: 162px 364px 364px;
             }
+            
             .entrevistas article div:nth-child(1n) {
                 width: 100%;
                 padding: unset;
             }
+            section.entrevistas article div img{
+                padding-bottom: unset;
+                max-width: unset;
+                grid-area: div;
+                width: 100%;
+                min-height:364px;
+            }
+            /*
             section.entrevistas article div img.width_responsive{
                 padding-bottom: unset;
                 max-width: unset;
