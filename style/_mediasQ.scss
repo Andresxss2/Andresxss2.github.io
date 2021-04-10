@@ -1,5 +1,6 @@
     @media screen and (min-width:321px) {
 
+<<<<<<< HEAD
         section.title h1 span.punto_color{
             color: #0000EC;
                 
@@ -22,6 +23,22 @@
         }
         section.entrevistas article div img{
                 max-width: 350px;
+=======
+        section.title .punto_color{
+                color: #0000EC;
+        }
+        section.title p span::after{
+                content: " y la tecnología.";   
+            }
+        section.title p span::before{
+                 display: none;
+             }
+        section.title h1 span{
+                padding: unset;
+        }
+        section.entrevistas article div img{
+                width: 80%;
+>>>>>>> 8d4848dbd8b20d4c0606a950053b6fce6aa461e7
                 padding-bottom: 10px;
         }
     }
@@ -36,11 +53,14 @@
                 margin-left: 50px;
                 max-width: 640px;
             }
+<<<<<<< HEAD
             
             .nosotros article div.phone_over{
                 
                 width: 65%;
             }
+=======
+>>>>>>> 8d4848dbd8b20d4c0606a950053b6fce6aa461e7
             .entrevistas  article{
                 display: grid;
                 grid-template-areas:"h2 h2 "
@@ -53,6 +73,7 @@
             .entrevistas article h2{
                 grid-area: h2;
             }
+<<<<<<< HEAD
             section.entrevistas article div{           
                 width:100% ;
     
@@ -67,6 +88,21 @@
                 padding: 0 0 10px 10%;
             }
 
+=======
+            section.entrevistas article div{
+                width:100% ;
+                
+            }
+            section.entrevistas article div img{
+                width: 90%;
+                padding-bottom: 10px;
+            }
+
+            section.topicos article.novedades div.oblicuo div a{
+
+                margin: 64px 16px 64px 16px;
+            } 
+>>>>>>> 8d4848dbd8b20d4c0606a950053b6fce6aa461e7
 
         }
 
@@ -184,20 +220,27 @@
                 grid-template-areas:"Pod_title Pod_title"
                                     "Pod1 Pod2" 
                                     "Pod3 Pod4";
+<<<<<<< HEAD
                 grid-template-columns: 50% 50%;
                 grid-template-rows: auto;
+=======
+>>>>>>> 8d4848dbd8b20d4c0606a950053b6fce6aa461e7
                 
             }
             .episodios article .pc{
                 display: unset;
                 max-width: 584px;
                 min-height: 232px;
+<<<<<<< HEAD
                 
             }
             .episodios article .pc iframe{
                 width: 80%;   
             }
 
+=======
+            }
+>>>>>>> 8d4848dbd8b20d4c0606a950053b6fce6aa461e7
             section.episodios.oblicuo article h2.Pod_title{
                 margin: 186px 0 26px 200px;
                 font-size: 48px;
@@ -205,7 +248,10 @@
                 
             }
             
+<<<<<<< HEAD
             
+=======
+>>>>>>> 8d4848dbd8b20d4c0606a950053b6fce6aa461e7
             .Pod_title{
                 grid-area: Pod_title;
                 width: 209px;
@@ -219,11 +265,16 @@
             }
             .pc.Pod1{
                 grid-area: Pod1;
+<<<<<<< HEAD
                 margin: 26px 0 72px 100px;
+=======
+                margin:26px 72px 72px 100px;
+>>>>>>> 8d4848dbd8b20d4c0606a950053b6fce6aa461e7
                 
             }
             .pc.Pod2{
                 grid-area: Pod2;
+<<<<<<< HEAD
                 margin:26px 0 72px 72px;
             }
             .pc.Pod3{
@@ -233,6 +284,17 @@
             .pc.Pod4{
                 grid-area: Pod4;
                 margin:0 0 164px 72px;
+=======
+                margin:26px 100px 0 0;
+            }
+            .pc.Pod3{
+                grid-area: Pod3;
+                margin:0 72px 84px 100px;
+            }
+            .pc.Pod4{
+                grid-area: Pod4;
+                margin:0 100px 84px 0;
+>>>>>>> 8d4848dbd8b20d4c0606a950053b6fce6aa461e7
             }
 
             /* *********************************************        Seccion nosotros   ****************************************************** */
@@ -242,7 +304,11 @@
 
             .nosotros article div.phone_over{
                     overflow:unset;
+<<<<<<< HEAD
                     width: 50%;
+=======
+                    width: 100%;
+>>>>>>> 8d4848dbd8b20d4c0606a950053b6fce6aa461e7
             }
             .nosotros article{
                 display: flex;
@@ -250,16 +316,29 @@
                 
             }
 
+<<<<<<< HEAD
             .nosotros article div.phone_over img{
                 position: unset;
+=======
+            .nosotros article .phone_over img{
+                    
+>>>>>>> 8d4848dbd8b20d4c0606a950053b6fce6aa461e7
                 min-width: 457.6px;
                 height: 660px;
                 margin: 0 62.4px 64px 200px; 
             }
 
             .nosotros article div{
+<<<<<<< HEAD
                 width: 50%;
                 height: 100%;
+=======
+                width: 100%;
+                height: 100%;
+
+                
+               
+>>>>>>> 8d4848dbd8b20d4c0606a950053b6fce6aa461e7
             }
             .nosotros article div h2{
                 width: 399px;
@@ -302,6 +381,7 @@
                 grid-template-columns:auto;
                 grid-template-rows: 162px 364px 364px;
             }
+<<<<<<< HEAD
             .entrevistas article div:nth-child(1n) {
                 width: 100%;
                 padding: unset;
@@ -315,6 +395,16 @@
                 
             }
             
+=======
+            .entrevistas article div {
+                width: 100%;
+            }
+            .entrevistas article div img{
+                grid-area: div;
+                width: 100%;
+                min-height:364px;
+            }
+>>>>>>> 8d4848dbd8b20d4c0606a950053b6fce6aa461e7
 
             /* *********************************************        Seccion topicos   ****************************************************** */
             section.topicos article:first-child div{
@@ -323,6 +413,7 @@
                 grid-template-areas: "img1 img2 img3 img4"
                                      "P_1 P_2 P_3 P_4";
 
+<<<<<<< HEAD
                 grid-template-columns: repeat(4,18.3%);
                 grid-template-rows:repeat(2,50%);
                 flex-flow: column nowrap;
@@ -333,16 +424,35 @@
 
             }
             .topicos article div p{
+=======
+                flex-flow: column nowrap;
+            }
+            .topicos article div img{
+                margin: 0 156px 29px 0;
+            }
+            .topicos article div p{
+                margin: 0 40px 66px 0;
+                width: 220px;
+>>>>>>> 8d4848dbd8b20d4c0606a950053b6fce6aa461e7
                 height: 32px;
             }
             
             .topicos article div .img1{
                 grid-area:img1;
+<<<<<<< HEAD
+=======
+                margin-left: 278px;
+>>>>>>> 8d4848dbd8b20d4c0606a950053b6fce6aa461e7
             }
             .topicos article div .P_1{
                 
                 grid-area: P_1;
+<<<<<<< HEAD
                 margin-left: 1.38%;
+=======
+                height: 64px;
+                margin-left: 220px;
+>>>>>>> 8d4848dbd8b20d4c0606a950053b6fce6aa461e7
             }
             .topicos article div .img2{
                 grid-area:img2;
@@ -360,18 +470,31 @@
             }
             .topicos article div .img4{
                 grid-area:img4;
+<<<<<<< HEAD
                 margin-right:  19.3%;
+=======
+                margin-right:  278px;
+>>>>>>> 8d4848dbd8b20d4c0606a950053b6fce6aa461e7
             }
             .topicos article div .P_4{
                 grid-area:P_4;
                 height: 64px;
+<<<<<<< HEAD
                 margin-right:  1.38%;
+=======
+                margin-right:  220px;
+>>>>>>> 8d4848dbd8b20d4c0606a950053b6fce6aa461e7
                 margin-bottom: 34px;
             }
             .topicos article h2{
                 width: 100%;
+<<<<<<< HEAD
                 height: 14.5%;
                 margin-left: 13.9%;
+=======
+                height: 62px;
+                margin: 64px 0 69px 200px;
+>>>>>>> 8d4848dbd8b20d4c0606a950053b6fce6aa461e7
                 font-size: 48px;
                 color: #060A24;
                 letter-spacing: 0;
@@ -382,13 +505,18 @@
             
             }
             section article.novedades div.oblicuo h2{
+<<<<<<< HEAD
                 transform-origin: 118% 100%;
+=======
+                transform-origin: top right;
+>>>>>>> 8d4848dbd8b20d4c0606a950053b6fce6aa461e7
                 font-size: 48px;
                 color: #FFFFFF;
                 letter-spacing: 0;
                 text-align: center;
                 width: 702px;
                 height: 62px;
+<<<<<<< HEAD
                 margin: 200px 0 2% 16% ;
             
             }
@@ -398,17 +526,29 @@
                 margin: 0 0 0 36%;
                 width:  30%;
                 height: 56px;
+=======
+                margin: 213px 374px 36px 374px;
+            
+            }
+            section article.novedades div.oblicuo div{
+                width: 345px;
+                height: 56px;
+                margin: 0 548px 151px 547px;
+>>>>>>> 8d4848dbd8b20d4c0606a950053b6fce6aa461e7
                 font-size: 18px;
                 color: #060A24;
                 letter-spacing: 0;
                 text-align: center;
                 line-height: 24px;
             }
+<<<<<<< HEAD
             section article.novedades div.oblicuo div.btn a{
                 transform: skewY(0);
                 margin: unset ;
                 
             }
+=======
+>>>>>>> 8d4848dbd8b20d4c0606a950053b6fce6aa461e7
 
         }
 
